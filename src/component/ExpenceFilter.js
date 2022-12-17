@@ -5,12 +5,11 @@ import React from "react"
 import "./ExpenceFilter.css"
 
 const ExpenceFilter = (props)=>{
-  
+    console.log(props)
     const dropdownHandler = (event)=>{
-     props.onChangeFilter(event.target.value)
+     props.onchangeFilter(event.target.value)
     }
     return(
-
         <div className="expenses-filter">
             <div className="expenses-filter__control">
                 <label>Filter by Year</label>
