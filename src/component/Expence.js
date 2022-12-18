@@ -6,13 +6,13 @@ import "./Expence.css";
 import Card from "./Card";
 function Expence(props) {
   // console.log(props)
-  const [filteredYear, setFilteredYear] = useState("2020");
+  const [filteredYear, setFilteredYear] = useState("2022");
   const filterChangeHandler = (selectedyear) => {
     setFilteredYear(selectedyear);
   };
 
   const filteredExpenses = props.arr.filter((expenc) => {
-    return expenc.date.getFullYear().toString() == filteredYear;
+    return expenc.date.getFullYear().toString() === filteredYear;
   });
 
   let expenceContent = <p>No Expence found . </p>
@@ -49,7 +49,7 @@ function Expence(props) {
         ))
       )} */}
   {expenceContent}
-      <ExpenceItem
+      {/* <ExpenceItem
         title={props.arr[0].title}
         amount={props.arr[0].amount}
         date={props.arr[0].date}
@@ -68,7 +68,7 @@ function Expence(props) {
         title={props.arr[3].title}
         amount={props.arr[3].amount}
         date={props.arr[3].date}
-      />
+      /> */}
     </Card>
   );
 }
