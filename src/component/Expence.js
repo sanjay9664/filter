@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import ExpenceItem from "./ExpenceItem";
+// import ExpenceItem from "./ExpenceItem";
 // import ExpenceItem from "./component/ExpenceItem";
 import ExpenceFilter from "./ExpenceFilter";
 import "./Expence.css";
 import Card from "./Card";
+import ExpenceList from "./ExpenceList";
+import ExpencesChart from "./NewExpence/ExpencesChart";
+
 function Expence(props) {
   // console.log(props)
   const [filteredYear, setFilteredYear] = useState("2022");
@@ -15,19 +18,19 @@ function Expence(props) {
     return expenc.date.getFullYear().toString() === filteredYear;
   });
 
-  let expenceContent = <p>No Expence found . </p>
+  // let expenceContent = <p>No Expence found . </p>
 
-   if(filteredExpenses.length > 0 ){
-    expenceContent =  filteredExpenses.map((expenc) => (
-      <ExpenceItem
-        key={expenc.id}
-        title={expenc.title}
-        amount={expenc.amount}
-        date={expenc.date}
-      />
-    ))
+  //  if(filteredExpenses.length > 0 ){
+  //   expenceContent =  filteredExpenses.map((expenc) => (
+  //     <ExpenceItem
+  //       key={expenc.id}
+  //       title={expenc.title}
+  //       amount={expenc.amount}
+  //       date={expenc.date}
+  //     />
+  //   ))
   
-   }
+  //  }
   return (
     // line no 8 change the div with Card and export card
     <Card className="expence">
@@ -48,7 +51,8 @@ function Expence(props) {
           />
         ))
       )} */}
-  {expenceContent}
+  <ExpencesChart expencs={filteredExpenses}/>
+  <ExpenceList  arr={filteredExpenses}/>
       {/* <ExpenceItem
         title={props.arr[0].title}
         amount={props.arr[0].amount}

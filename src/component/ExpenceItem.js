@@ -28,6 +28,7 @@ const handler = ()=>{
 // }
   return (
     // div replace in Card  and import here the Card
+    <li>
     <Card className='expense-item'> 
    <ExpenceDate date={props.date}/>
       <div className='expense-item__description'>
@@ -36,6 +37,7 @@ const handler = ()=>{
       </div>
       <button onClick={handler}>Updated</button>
     </Card>
+    </li>
   );
 }
 
